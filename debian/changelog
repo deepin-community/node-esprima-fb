@@ -1,0 +1,55 @@
+node-esprima-fb (15001.1001.0-dev-harmony-fb-4) unstable; urgency=medium
+
+  * Fix d/watch.
+  * Revert the Debian patches (why are they applied!?).
+  * Bump standards-version to 4.6.0.
+  * Drop the patch to use /usr/bin/nodejs (obsolete now).
+  * Add a lintian override about scripts not being executable.
+
+ -- Julien Puydt <jpuydt@debian.org>  Sun, 29 Aug 2021 21:31:11 +0200
+
+node-esprima-fb (15001.1001.0-dev-harmony-fb-3) unstable; urgency=medium
+
+  [ Xavier Guimard ]
+  * Add debian/gbp.conf
+  * Fix debian/watch
+  * Use dh-sequence-nodejs auto install
+  * Enable upstream test
+
+  [ Julien Puydt ]
+  * Bump std-vers to 4.5.1.
+
+ -- Julien Puydt <jpuydt@debian.org>  Mon, 23 Nov 2020 14:44:32 +0100
+
+node-esprima-fb (15001.1001.0-dev-harmony-fb-2) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Use secure copyright file specification URI.
+  * debian/copyright: use spaces rather than tabs to start continuation
+    lines.
+  * Bump debhelper from deprecated 9 to 12.
+  * Set debhelper-compat version in Build-Depends.
+  * Set upstream metadata fields: Bug-Database, Repository, Repository-
+    Browse.
+  * Update Vcs-* headers to use salsa repository.
+
+  [ Julien Puydt ]
+  * Bump d/watch to version 4.
+  * Mark the import autopkgtest as superficial.
+  * Use my debian.org mail address.
+  * Mark the package as Multi-Arch: foreign following hinter.
+  * Bump std-vers to 4.5.0.
+  * Bump dh compat to 13.
+  * Install to /usr/share/nodejs and not /usr/lib/nodejs.
+  * Update lintian overrides.
+  * Declare d/rules doesn't require root.
+  * Move from section web to section javascript.
+  * Install examples.
+
+ -- Julien Puydt <jpuydt@debian.org>  Tue, 10 Nov 2020 07:59:17 +0100
+
+node-esprima-fb (15001.1001.0-dev-harmony-fb-1) unstable; urgency=low
+
+  * Initial release (Closes: #802392)
+
+ -- Julien Puydt <julien.puydt@laposte.net>  Mon, 19 Oct 2015 23:16:53 +0200

@@ -1,0 +1,278 @@
+From 1fa76075f5de907db948c9a98bc908e7dff56223 Mon Sep 17 00:00:00 2001
+From: Xavier Guimard <yadd@debian.org>
+Date: Wed, 11 Nov 2020 09:25:09 +0100
+Subject: Fix test
+
+---
+ test/test.js | 258 ---------------------------------------------------
+ 1 file changed, 258 deletions(-)
+
+diff --git a/test/test.js b/test/test.js
+index 393e207..ecc265d 100644
+--- a/test/test.js
++++ b/test/test.js
+@@ -5422,264 +5422,6 @@ var testFixtureOptions = {},
+             }]
+         },
+ 
+-        'var x = /[a-z]/y': {
+-            type: 'Program',
+-            body: [{
+-                type: 'VariableDeclaration',
+-                declarations: [{
+-                    type: 'VariableDeclarator',
+-                    id: {
+-                        type: 'Identifier',
+-                        name: 'x',
+-                        range: [4, 5],
+-                        loc: {
+-                            start: { line: 1, column: 4 },
+-                            end: { line: 1, column: 5 }
+-                        }
+-                    },
+-                    init: {
+-                        type: 'Literal',
+-                        value: null,
+-                        raw: '/[a-z]/y',
+-                        regex: {
+-                            pattern: '[a-z]',
+-                            flags: 'y'
+-                        },
+-                        range: [8, 16],
+-                        loc: {
+-                            start: { line: 1, column: 8 },
+-                            end: { line: 1, column: 16 }
+-                        }
+-                    },
+-                    range: [4, 16],
+-                    loc: {
+-                        start: { line: 1, column: 4 },
+-                        end: { line: 1, column: 16 }
+-                    }
+-                }],
+-                kind: 'var',
+-                range: [0, 16],
+-                loc: {
+-                    start: { line: 1, column: 0 },
+-                    end: { line: 1, column: 16 }
+-                }
+-            }],
+-            range: [0, 16],
+-            loc: {
+-                start: { line: 1, column: 0 },
+-                end: { line: 1, column: 16 }
+-            },
+-            tokens: [{
+-                type: 'Keyword',
+-                value: 'var',
+-                range: [0, 3],
+-                loc: {
+-                    start: { line: 1, column: 0 },
+-                    end: { line: 1, column: 3 }
+-                }
+-            }, {
+-                type: 'Identifier',
+-                value: 'x',
+-                range: [4, 5],
+-                loc: {
+-                    start: { line: 1, column: 4 },
+-                    end: { line: 1, column: 5 }
+-                }
+-            }, {
+-                type: 'Punctuator',
+-                value: '=',
+-                range: [6, 7],
+-                loc: {
+-                    start: { line: 1, column: 6 },
+-                    end: { line: 1, column: 7 }
+-                }
+-            }, {
+-                type: 'RegularExpression',
+-                value: '/[a-z]/y',
+-                regex: {
+-                    pattern: '[a-z]',
+-                    flags: 'y'
+-                },
+-                range: [8, 16],
+-                loc: {
+-                    start: { line: 1, column: 8 },
+-                    end: { line: 1, column: 16 }
+-                }
+-            }]
+-        },
+-
+-        'var x = /[a-z]/u': {
+-            type: 'Program',
+-            body: [{
+-                type: 'VariableDeclaration',
+-                declarations: [{
+-                    type: 'VariableDeclarator',
+-                    id: {
+-                        type: 'Identifier',
+-                        name: 'x',
+-                        range: [4, 5],
+-                        loc: {
+-                            start: { line: 1, column: 4 },
+-                            end: { line: 1, column: 5 }
+-                        }
+-                    },
+-                    init: {
+-                        type: 'Literal',
+-                        value: null,
+-                        raw: '/[a-z]/u',
+-                        regex: {
+-                            pattern: '[a-z]',
+-                            flags: 'u'
+-                        },
+-                        range: [8, 16],
+-                        loc: {
+-                            start: { line: 1, column: 8 },
+-                            end: { line: 1, column: 16 }
+-                        }
+-                    },
+-                    range: [4, 16],
+-                    loc: {
+-                        start: { line: 1, column: 4 },
+-                        end: { line: 1, column: 16 }
+-                    }
+-                }],
+-                kind: 'var',
+-                range: [0, 16],
+-                loc: {
+-                    start: { line: 1, column: 0 },
+-                    end: { line: 1, column: 16 }
+-                }
+-            }],
+-            range: [0, 16],
+-            loc: {
+-                start: { line: 1, column: 0 },
+-                end: { line: 1, column: 16 }
+-            },
+-            tokens: [{
+-                type: 'Keyword',
+-                value: 'var',
+-                range: [0, 3],
+-                loc: {
+-                    start: { line: 1, column: 0 },
+-                    end: { line: 1, column: 3 }
+-                }
+-            }, {
+-                type: 'Identifier',
+-                value: 'x',
+-                range: [4, 5],
+-                loc: {
+-                    start: { line: 1, column: 4 },
+-                    end: { line: 1, column: 5 }
+-                }
+-            }, {
+-                type: 'Punctuator',
+-                value: '=',
+-                range: [6, 7],
+-                loc: {
+-                    start: { line: 1, column: 6 },
+-                    end: { line: 1, column: 7 }
+-                }
+-            }, {
+-                type: 'RegularExpression',
+-                value: '/[a-z]/u',
+-                regex: {
+-                    pattern: '[a-z]',
+-                    flags: 'u'
+-                },
+-                range: [8, 16],
+-                loc: {
+-                    start: { line: 1, column: 8 },
+-                    end: { line: 1, column: 16 }
+-                }
+-            }]
+-        },
+-
+-        'var x = /[\\u{0000000000000061}-\\u{7A}]/u': {
+-            type: 'Program',
+-            body: [{
+-                type: 'VariableDeclaration',
+-                declarations: [{
+-                    type: 'VariableDeclarator',
+-                    id: {
+-                        type: 'Identifier',
+-                        name: 'x',
+-                        range: [4, 5],
+-                        loc: {
+-                            start: { line: 1, column: 4 },
+-                            end: { line: 1, column: 5 }
+-                        }
+-                    },
+-                    init: {
+-                        type: 'Literal',
+-                        value: null,
+-                        raw: '/[\\u{0000000000000061}-\\u{7A}]/u',
+-                        regex: {
+-                            pattern: '[\\u{0000000000000061}-\\u{7A}]',
+-                            flags: 'u'
+-                        },
+-                        range: [8, 40],
+-                        loc: {
+-                            start: { line: 1, column: 8 },
+-                            end: { line: 1, column: 40 }
+-                        }
+-                    },
+-                    range: [4, 40],
+-                    loc: {
+-                        start: { line: 1, column: 4 },
+-                        end: { line: 1, column: 40 }
+-                    }
+-                }],
+-                kind: 'var',
+-                range: [0, 40],
+-                loc: {
+-                    start: { line: 1, column: 0 },
+-                    end: { line: 1, column: 40 }
+-                }
+-            }],
+-            range: [0, 40],
+-            loc: {
+-                start: { line: 1, column: 0 },
+-                end: { line: 1, column: 40 }
+-            },
+-            tokens: [{
+-                type: 'Keyword',
+-                value: 'var',
+-                range: [0, 3],
+-                loc: {
+-                    start: { line: 1, column: 0 },
+-                    end: { line: 1, column: 3 }
+-                }
+-            }, {
+-                type: 'Identifier',
+-                value: 'x',
+-                range: [4, 5],
+-                loc: {
+-                    start: { line: 1, column: 4 },
+-                    end: { line: 1, column: 5 }
+-                }
+-            }, {
+-                type: 'Punctuator',
+-                value: '=',
+-                range: [6, 7],
+-                loc: {
+-                    start: { line: 1, column: 6 },
+-                    end: { line: 1, column: 7 }
+-                }
+-            }, {
+-                type: 'RegularExpression',
+-                value: '/[\\u{0000000000000061}-\\u{7A}]/u',
+-                regex: {
+-                    pattern: '[\\u{0000000000000061}-\\u{7A}]',
+-                    flags: 'u'
+-                },
+-                range: [8, 40],
+-                loc: {
+-                    start: { line: 1, column: 8 },
+-                    end: { line: 1, column: 40 }
+-                }
+-            }]
+-        },
+-
+         'var x = /\\u{110000}/u': {
+             index: 21,
+             lineNumber: 1,

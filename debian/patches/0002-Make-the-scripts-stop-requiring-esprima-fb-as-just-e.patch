@@ -1,0 +1,36 @@
+From b1b26a8990a1c8cdb5d124974d18409720dcb0d6 Mon Sep 17 00:00:00 2001
+From: Julien Puydt <julien.puydt@laposte.net>
+Date: Sun, 18 Oct 2015 22:29:35 +0200
+Subject: Make the scripts stop requiring esprima-fb as just esprima
+
+---
+ bin/esparse.js    | 2 +-
+ bin/esvalidate.js | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/bin/esparse.js b/bin/esparse.js
+index 1727e2f..bd25942 100755
+--- a/bin/esparse.js
++++ b/bin/esparse.js
+@@ -30,7 +30,7 @@ var fs, esprima, fname, content, options, syntax;
+ 
+ if (typeof require === 'function') {
+     fs = require('fs');
+-    esprima = require('esprima');
++    esprima = require('esprima-fb');
+ } else if (typeof load === 'function') {
+     try {
+         load('esprima.js');
+diff --git a/bin/esvalidate.js b/bin/esvalidate.js
+index d1dcab9..3ba3d57 100755
+--- a/bin/esvalidate.js
++++ b/bin/esvalidate.js
+@@ -36,7 +36,7 @@ if (typeof esprima === 'undefined') {
+         esprima = require('./esprima');
+     } else if (typeof require === 'function') {
+         fs = require('fs');
+-        esprima = require('esprima');
++        esprima = require('esprima-fb');
+     } else if (typeof load === 'function') {
+         try {
+             load('esprima.js');

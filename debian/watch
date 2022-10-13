@@ -1,0 +1,4 @@
+version=4
+opts=\
+filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-esprima-fb-$1.tar.gz/ \
+ https://github.com/facebook/esprima/tags .*/(.*).tar.gz

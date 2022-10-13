@@ -1,0 +1,3 @@
+# well, they're not in /usr/bin anyway... see bug #368792
+node-esprima-fb: script-not-executable usr/share/nodejs/esprima-fb/bin/esparse.js
+node-esprima-fb: script-not-executable usr/share/nodejs/esprima-fb/bin/esvalidate.js
